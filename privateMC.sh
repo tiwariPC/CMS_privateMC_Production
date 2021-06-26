@@ -14,7 +14,7 @@ echo "Input Arguments: $4"
 echo "Input Arguments: $5"
 echo "###################################################"
 
-OUTDIR=root://se01.indiacms.res.in//dpm/indiacms.res.in/home/cms/store/user/ptiwari/t3store2/BBDM/privateMC_2016_2HDMa/${4}/
+OUTDIR=root://se01.indiacms.res.in//dpm/indiacms.res.in/home/cms/store/user/ptiwari/t3store2/BBDM_2HDMa_2016/privateMC/${4}/
 
 echo "======="
 ls

@@ -1,0 +1,135 @@
+Executable = privateMC.sh
+Universe = vanilla
+Notification = ERROR
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+Transfer_Input_Files = privateMC.sh, gensim_cfg.py, step1_DIGIPREMIX_S2_DATAMIX_L1_DIGI2RAW_HLT.py, step2_RAW2DIGI_RECO_EI.py, step3_PAT.py, dummyFile
+Transfer_Output_Files = dummyFile
+use_x509userproxy = True
+request_memory = 12000
+request_cpus = 8
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_1000_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_1000_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_1000_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_1200_MH4_1000/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_1200_MH4_1000_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_100_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_100_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_100_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_1200_MH4_100/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_1200_MH4_100_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_10_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_10_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_10_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_1200_MH4_10/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_1200_MH4_10_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_150_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_150_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_150_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_1200_MH4_150/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_1200_MH4_150_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_200_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_200_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_200_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_1200_MH4_200/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_1200_MH4_200_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_250_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_250_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_250_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_1200_MH4_250/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_1200_MH4_250_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_300_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_300_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_300_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_1200_MH4_300/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_1200_MH4_300_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_350_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_350_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_350_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_1200_MH4_350/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_1200_MH4_350_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_400_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_400_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_400_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_1200_MH4_400/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_1200_MH4_400_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_450_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_450_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_450_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_1200_MH4_450/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_1200_MH4_450_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_500_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_500_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_500_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_1200_MH4_500/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_1200_MH4_500_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_50_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_50_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_50_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_1200_MH4_50/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_1200_MH4_50_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_700_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_700_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_700_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_1200_MH4_700/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_1200_MH4_700_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_750_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_750_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_1200_MH4_750_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_1200_MH4_750/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_1200_MH4_750_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_100_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_100_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_100_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_600_MH4_100/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_600_MH4_100_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_10_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_10_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_10_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_600_MH4_10/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_600_MH4_10_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_150_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_150_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_150_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_600_MH4_150/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_600_MH4_150_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_200_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_200_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_200_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_600_MH4_200/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_600_MH4_200_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_250_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_250_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_250_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_600_MH4_250/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_600_MH4_250_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_300_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_300_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_300_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_600_MH4_300/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_600_MH4_300_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_350_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_350_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_350_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_600_MH4_350/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_600_MH4_350_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_400_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_400_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_400_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_600_MH4_400/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_600_MH4_400_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_450_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_450_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_450_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_600_MH4_450/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_600_MH4_450_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_500_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_500_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_500_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_600_MH4_500/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_600_MH4_500_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
+Output = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_50_$(Cluster)_$(Process).stdout
+Error  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_50_$(Cluster)_$(Process).stdout
+Log  = condor_logs/privateMC/210626_054144/bbDM_2HDMa_MH3_600_MH4_50_$(Cluster)_$(Process).log
+Arguments = $(Cluster) $(Process) gensim_cfg.py bbDM_2HDMa_MH3_600_MH4_50/210626_054144  \/cvmfs\/cms.cern.ch\/phys_generator\/gridpacks\/2017\/13TeV\/madgraph\/V5_2.6.0\/bbDM\/2HDMa\/bbDM_2HDMa_MH3_600_MH4_50_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz
+Queue 200
