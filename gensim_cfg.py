@@ -26,7 +26,7 @@ process.load('Configuration.StandardSequences.EndOfProcess_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(500)
+    input = cms.untracked.int32(200)
 )
 
 # Input source
@@ -38,7 +38,7 @@ process.options = cms.untracked.PSet(
 
 # Production Info
 process.configurationMetadata = cms.untracked.PSet(
-    annotation = cms.untracked.string('Configuration/GenProduction/python/bbDM_2HDMa_MH3_600_MH4_10_Mchi_1-fragment.py nevts:500'),
+    annotation = cms.untracked.string('Configuration/GenProduction/python/bbDM_2HDMa_MH3_600_MH4_10_Mchi_1-fragment.py nevts:200'),
     name = cms.untracked.string('Applications'),
     version = cms.untracked.string('$Revision: 1.19 $')
 )
@@ -122,7 +122,7 @@ process.generator = cms.EDFilter("Pythia8HadronizerFilter",
 
 process.externalLHEProducer = cms.EDProducer("ExternalLHEProducer",
     args = cms.vstring('/cvmfs/cms.cern.ch/phys_generator/gridpacks/2017/13TeV/madgraph/V5_2.6.0/bbDM/2HDMa/bbDM_2HDMa_MH3_600_MH4_10_Mchi_1_slc6_amd64_gcc630_CMSSW_9_3_8_tarball.tar.xz'),
-    nEvents = cms.untracked.uint32(500),
+    nEvents = cms.untracked.uint32(200),
     numberOfParameters = cms.uint32(1),
     outputFile = cms.string('cmsgrid_final.lhe'),
     scriptName = cms.FileInPath('GeneratorInterface/LHEInterface/data/run_generic_tarball_cvmfs.sh')

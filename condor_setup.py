@@ -45,7 +45,7 @@ condorJobHelper = condorJobHelper.condorJobHelper(condor_file_name,
                                                   output_log_path,
                                                   'test',   # logFileName
                                                   "",   # Arguments
-                                                  200 # Queue
+                                                  500 # Queue
                                                   )
 jdlFile = condorJobHelper.jdlFileHeaderCreater()
 print('==> jdlfile name: ',jdlFile)
