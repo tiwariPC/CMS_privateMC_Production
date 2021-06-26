@@ -58,18 +58,20 @@ For the CMSSW full simulation, first choose the campaign which is closest to you
 
 # Condor Job Submission
 
-```bash
-git clone git@github.com:ram1123/CMS_FulllSimulation.git
-cd CMS_FulllSimulation
-git submodule init
+```
+git clone git@github.com:tiwariPC/CMS_privateMC_Production.git
+cd CMS_privateMC_Production
 ```
 
-1. place all the python configuration file inside the directory `CMS_FulllSimulation`.
-2. Update the `RunGENSIM_condor.jdl` and `RunGENSIM_condor.sh` files.
-    1. In file `RunGENSIM_condor.sh` you need to replace the python configuration file name at appropriate places.
+1. place all the python configuration file inside the directory `CMS_privateMC_Production`.
+2. Update the `privateMC.jdl` and `privateMC.sh` files.
+    1. In file `privateMC.sh` you need to replace the python configuration file name at appropriate places.
     1. Add the appropriate number of events and jobs. For example:
         1. If you want 50k events then you can change `Queue 50` in the jdl file and put 1000 in each python configuration files.
-1. submit the condor jobs.
+3. To create ```.sh``` and ```.jdl``` file for the condor submission
+```python condor_setup.py ```
+
+4. submit the condor jobs.
 
 ```bash
 voms-proxy-init --voms cms --valid 168:00
