@@ -8,10 +8,9 @@ import gridpack_lists as sampleLists
 from color_style import style
 
 """Fields changed by user"""
-StringToChange = 'privateMC_2016_2HDMa'
+StringToChange = 'privateMC'
 condor_file_name = StringToChange
-# storeAreaPath = '/dpm/indiacms.res.in/home/cms/store/user/ptiwari/t3store2/BBDM'
-storeAreaPath = '/dpm/indiacms.res.in/home/cms/store/user/ptiwari/t3store2/BBDM_test'
+storeAreaPath = '/dpm/indiacms.res.in/home/cms/store/user/ptiwari/t3store2/BBDM_2HDMa_2016'
 storeAreaPathForlogs = '.'
 
 """Create log files"""
@@ -81,7 +80,6 @@ outScript.write('\n'+'echo "Input Arguments: $5"')
 outScript.write('\n'+'echo "'+'#'*51+'"')
 outScript.write('\n'+'')
 outScript.write('\n'+'OUTDIR=root://se01.indiacms.res.in/'+storeAreaPath+os.sep+StringToChange+'/${4}/')
-# outScript.write('\n'+'OUTDIR=root://eoscms.cern.ch/'+storeAreaPath+os.sep+StringToChange+'/${4}/')
 outScript.write('\n'+'')
 outScript.write('\n'+'echo "======="')
 outScript.write('\n'+'ls')
