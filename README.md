@@ -63,9 +63,9 @@ git clone git@github.com:tiwariPC/CMS_privateMC_Production.git
 cd CMS_privateMC_Production
 ```
 
-1. place all the python configuration file inside the directory `CMS_FulllSimulation`.
-2. Update the `RunGENSIM_condor.jdl` and `RunGENSIM_condor.sh` files.
-    1. In file `RunGENSIM_condor.sh` you need to replace the python configuration file name at appropriate places.
+1. place all the python configuration file inside the directory `CMS_privateMC_Production`.
+2. Update the `privateMC.jdl` and `privateMC.sh` files.
+    1. In file `privateMC.sh` you need to replace the python configuration file name at appropriate places.
     1. Add the appropriate number of events and jobs. For example:
         1. If you want 50k events then you can change `Queue 50` in the jdl file and put 1000 in each python configuration files.
 3. To create ```.sh``` and ```.jdl``` file for the condor submission
