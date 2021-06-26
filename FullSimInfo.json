@@ -1,0 +1,34 @@
+{
+    "wmLHEGEN": {
+        "CMSSWVersion": "CMSSW_10_6_18",
+        "PythonConfig": "B2G-RunIISummer20UL17wmLHEGEN-00005_1_cfg.py",
+        "nEventsPerFile": 500,
+        "RandomSeed": 11,
+        "GridpackWithPath": "/afs/cern.ch/user/r/rasharma/work/h4L_analysis/CMSFullSim/CMS_FulllSimulation/ggh012j_5f_NLO_FXFX_M125_amcatnloFXFX_JHUGenV714_pythia8_slc6_amd64_gcc630_CMSSW_9_3_16_tarball.tar.xz"
+    },
+    "SIM": {
+        "CMSSWVersion": "CMSSW_10_6_17_patch1",
+        "PythonConfig": "B2G-RunIISummer20UL17SIM-00001_1_cfg.py",
+        "nEventsPerFile": 500
+    },
+    "DIGIPremix": {
+        "CMSSWVersion": "CMSSW_10_6_17_patch1",
+        "PythonConfig": "B2G-RunIISummer20UL17DIGIPremix-00001_1_cfg.py",
+        "nEventsPerFile": 500
+    },
+    "HLT": {
+        "CMSSWVersion": "CMSSW_9_4_14_UL_patch1",
+        "PythonConfig": "B2G-RunIISummer20UL17HLT-00001_1_cfg.py",
+        "nEventsPerFile": 500
+    },
+    "RECO": {
+        "CMSSWVersion": "CMSSW_10_6_17_patch1",
+        "PythonConfig": "B2G-RunIISummer20UL17RECO-00001_1_cfg.py",
+        "nEventsPerFile": 500
+    },
+    "MiniAOD": {
+        "CMSSWVersion": "CMSSW_10_6_20",
+        "PythonConfig": "B2G-RunIISummer20UL17MiniAODv2-00068_1_cfg.py",
+        "nEventsPerFile": 500
+    }
+}
