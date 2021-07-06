@@ -10,7 +10,7 @@ from color_style import style
 """Fields changed by user"""
 StringToChange = 'privateMC'
 condor_file_name = StringToChange
-storeAreaPath = '/dpm/indiacms.res.in/home/cms/store/user/ptiwari/t3store2/BBDM_2HDMa_2016'
+storeAreaPath = '/dpm/indiacms.res.in/home/cms/store/user/ptiwari/t3store2/2016_BBDM_2HDMa'
 storeAreaPathForlogs = '.'
 
 """Create log files"""
@@ -37,7 +37,7 @@ for key in sampleLists.models:
 
 
 import condorJobHelper
-listOfFilesToTransfer = 'gensim_cfg.py, step1_DIGIPREMIX_S2_DATAMIX_L1_DIGI2RAW_HLT.py, step2_RAW2DIGI_RECO_EI.py, step3_PAT.py, dummyFile'
+listOfFilesToTransfer = 'EXO-RunIISummer15wmLHEGS-07001_1_cfg.py, EXO-RunIISummer16DR80Premix-14550_1_cfg.py, EXO-RunIISummer16DR80Premix-14550_2_cfg.py, EXO-RunIISummer16MiniAODv3-12502_1_cfg.py, dummyFile'
 condorJobHelper = condorJobHelper.condorJobHelper(condor_file_name,
                                                   listOfFilesToTransfer,
                                                   12000,    # request_memory 12000
@@ -57,7 +57,7 @@ for key in sampleLists.models:
         DirName = gridpcaks.split('/')[-1].split('_')
         DirName = DirName[0]+'_'+DirName[1]+'_'+DirName[2]+'_'+DirName[3]+'_'+DirName[4]+'_'+DirName[5]
         condorJobHelper.logFileName = DirName
-        condorJobHelper.Arguments = 'gensim_cfg.py '+DirName + \
+        condorJobHelper.Arguments = 'EXO-RunIISummer15wmLHEGS-07001_1_cfg.py '+DirName + \
             os.sep+dirTag + '  '+gridpcaks.replace('/', '\/')
         jdlFile = condorJobHelper.jdlFileAppendLogInfo()
 
@@ -86,8 +86,8 @@ outScript.write('\n'+'ls')
 outScript.write('\n'+'echo "======"')
 outScript.write('\n'+'')
 outScript.write('\n'+'echo $PWD')
-outScript.write('\n'+'eval `scramv1 project CMSSW CMSSW_9_4_0`')
-outScript.write('\n'+'cd CMSSW_9_4_0/src/')
+outScript.write('\n'+'eval `scramv1 project CMSSW CMSSW_7_1_38`')
+outScript.write('\n'+'cd CMSSW_7_1_38/src/')
 outScript.write('\n'+'# set cmssw environment')
 outScript.write('\n'+'eval `scram runtime -sh`')
 outScript.write('\n'+'cd -')
@@ -96,11 +96,11 @@ outScript.write('\n'+'echo "==> List all files..."')
 outScript.write('\n'+'ls ')
 outScript.write('\n'+'echo "+=============================="')
 outScript.write('\n'+'echo "==> Running GEN-SIM step (1001 events will be generated)"')
-outScript.write("\n"+'sed -i "s/args = cms.vstring.*/args = cms.vstring(\\"${5}\\"),/g" gensim_cfg.py ')
+outScript.write("\n"+'sed -i "s/args = cms.vstring.*/args = cms.vstring(\\"${5}\\"),/g" EXO-RunIISummer15wmLHEGS-07001_1_cfg.py ')
 outScript.write('\n'+'echo "+=============================="')
-outScript.write('\n'+'cat gensim_cfg.py ')
+outScript.write('\n'+'cat EXO-RunIISummer15wmLHEGS-07001_1_cfg.py ')
 outScript.write('\n'+'echo "+=============================="')
-outScript.write('\n'+'cmsRun gensim_cfg.py ')
+outScript.write('\n'+'cmsRun EXO-RunIISummer15wmLHEGS-07001_1_cfg.py ')
 # outScript.write('\n'+'cmsRun ${3} ')
 outScript.write('\n'+'echo "List all root files = "')
 outScript.write('\n'+'ls *.root')
@@ -109,18 +109,28 @@ outScript.write('\n'+'date')
 outScript.write('\n'+'echo "+=============================="')
 outScript.write('\n'+'')
 outScript.write('\n'+'echo "Loading CMSSW env DR1, DR2 and MiniAOD"')
+outScript.write('\n'+'eval `scramv1 project CMSSW CMSSW_8_0_31`')
+outScript.write('\n'+'cd CMSSW_8_0_31/src/')
+outScript.write('\n'+'# set cmssw environment')
+outScript.write('\n'+'eval `scram runtime -sh`')
+outScript.write('\n'+'cd -')
 outScript.write('\n'+'')
 outScript.write('\n'+'echo "========================="')
 outScript.write('\n'+'echo "==> List all files..."')
 outScript.write('\n'+'echo "pwd : ${PWD}"')
 outScript.write('\n'+'ls ')
 outScript.write('\n'+'echo "+=============================="')
-outScript.write('\n'+'echo "==> cmsRun step1_DIGIPREMIX_S2_DATAMIX_L1_DIGI2RAW_HLT.py" ')
-outScript.write('\n'+'cmsRun step1_DIGIPREMIX_S2_DATAMIX_L1_DIGI2RAW_HLT.py  ')
-outScript.write('\n'+'echo "==> cmsRun step2_RAW2DIGI_RECO_EI.py"')
-outScript.write('\n'+'cmsRun step2_RAW2DIGI_RECO_EI.py ')
-outScript.write('\n'+'echo "==> cmsRun step3_PAT.py"')
-outScript.write('\n'+'cmsRun step3_PAT.py')
+outScript.write('\n'+'echo "==> cmsRun EXO-RunIISummer16DR80Premix-14550_1_cfg.py" ')
+outScript.write('\n'+'cmsRun EXO-RunIISummer16DR80Premix-14550_1_cfg.py  ')
+outScript.write('\n'+'echo "==> cmsRun EXO-RunIISummer16DR80Premix-14550_2_cfg.py"')
+outScript.write('\n'+'cmsRun EXO-RunIISummer16DR80Premix-14550_2_cfg.py ')
+outScript.write('\n'+'eval `scramv1 project CMSSW CMSSW_9_4_9`')
+outScript.write('\n'+'cd CMSSW_9_4_9/src/')
+outScript.write('\n'+'# set cmssw environment')
+outScript.write('\n'+'eval `scram runtime -sh`')
+outScript.write('\n'+'cd -')
+outScript.write('\n'+'echo "==> cmsRun EXO-RunIISummer16MiniAODv3-12502_1_cfg.py"')
+outScript.write('\n'+'cmsRun EXO-RunIISummer16MiniAODv3-12502_1_cfg.py')
 outScript.write('\n'+'echo "========================="')
 outScript.write('\n'+'echo "==> List all files..."')
 outScript.write('\n'+'echo "pwd : ${PWD}"')
@@ -134,13 +144,13 @@ outScript.write('\n'+'echo "+=============================="')
 outScript.write('\n'+'')
 outScript.write('\n'+'# copy output to eos')
 outScript.write('\n'+'echo "xrdcp output for condor"')
-outScript.write('\n'+'cp MINIAODSIM.root out_MiniAOD_${1}_${2}.root')
+outScript.write('\n'+'mv EXO-RunIISummer16MiniAODv3-12502.root  EXO-RunIISummer16MiniAODv3_${1}_${2}.root')
 outScript.write('\n'+'echo "========================="')
 outScript.write('\n'+'echo "==> List all files..."')
 outScript.write('\n'+'ls *.root ')
 outScript.write('\n'+'echo "+=============================="')
 outScript.write('\n'+'echo "xrdcp output for condor"')
-outScript.write('\n'+'xrdcp -f out_MiniAOD_${1}_${2}.root ${OUTDIR}/out_MiniAOD_${1}_${2}.root')
+outScript.write('\n'+'xrdcp -f EXO-RunIISummer16MiniAODv3_${1}_${2}.root ${OUTDIR}/EXO-RunIISummer16MiniAODv3_${1}_${2}.root')
 outScript.write('\n'+'echo "========================="')
 outScript.write('\n'+'echo "==> List all files..."')
 outScript.write('\n'+'ls *.root ')

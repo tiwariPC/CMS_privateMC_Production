@@ -14,15 +14,15 @@ echo "Input Arguments: $4"
 echo "Input Arguments: $5"
 echo "###################################################"
 
-OUTDIR=root://se01.indiacms.res.in//dpm/indiacms.res.in/home/cms/store/user/ptiwari/t3store2/BBDM_2HDMa_2016/privateMC/${4}/
+OUTDIR=root://se01.indiacms.res.in//dpm/indiacms.res.in/home/cms/store/user/ptiwari/t3store2/2016_BBDM_2HDMa/privateMC/${4}/
 
 echo "======="
 ls
 echo "======"
 
 echo $PWD
-eval `scramv1 project CMSSW CMSSW_9_4_0`
-cd CMSSW_9_4_0/src/
+eval `scramv1 project CMSSW CMSSW_7_1_38`
+cd CMSSW_7_1_38/src/
 # set cmssw environment
 eval `scram runtime -sh`
 cd -
@@ -31,11 +31,11 @@ echo "==> List all files..."
 ls 
 echo "+=============================="
 echo "==> Running GEN-SIM step (1001 events will be generated)"
-sed -i "s/args = cms.vstring.*/args = cms.vstring(\"${5}\"),/g" gensim_cfg.py 
+sed -i "s/args = cms.vstring.*/args = cms.vstring(\"${5}\"),/g" EXO-RunIISummer15wmLHEGS-07001_1_cfg.py 
 echo "+=============================="
-cat gensim_cfg.py 
+cat EXO-RunIISummer15wmLHEGS-07001_1_cfg.py 
 echo "+=============================="
-cmsRun gensim_cfg.py 
+cmsRun EXO-RunIISummer15wmLHEGS-07001_1_cfg.py 
 echo "List all root files = "
 ls *.root
 echo "List all files"
@@ -43,18 +43,28 @@ date
 echo "+=============================="
 
 echo "Loading CMSSW env DR1, DR2 and MiniAOD"
+eval `scramv1 project CMSSW CMSSW_8_0_31`
+cd CMSSW_8_0_31/src/
+# set cmssw environment
+eval `scram runtime -sh`
+cd -
 
 echo "========================="
 echo "==> List all files..."
 echo "pwd : ${PWD}"
 ls 
 echo "+=============================="
-echo "==> cmsRun step1_DIGIPREMIX_S2_DATAMIX_L1_DIGI2RAW_HLT.py" 
-cmsRun step1_DIGIPREMIX_S2_DATAMIX_L1_DIGI2RAW_HLT.py  
-echo "==> cmsRun step2_RAW2DIGI_RECO_EI.py"
-cmsRun step2_RAW2DIGI_RECO_EI.py 
-echo "==> cmsRun step3_PAT.py"
-cmsRun step3_PAT.py
+echo "==> cmsRun EXO-RunIISummer16DR80Premix-14550_1_cfg.py" 
+cmsRun EXO-RunIISummer16DR80Premix-14550_1_cfg.py  
+echo "==> cmsRun EXO-RunIISummer16DR80Premix-14550_2_cfg.py"
+cmsRun EXO-RunIISummer16DR80Premix-14550_2_cfg.py 
+eval `scramv1 project CMSSW CMSSW_9_4_9`
+cd CMSSW_9_4_9/src/
+# set cmssw environment
+eval `scram runtime -sh`
+cd -
+echo "==> cmsRun EXO-RunIISummer16MiniAODv3-12502_1_cfg.py"
+cmsRun EXO-RunIISummer16MiniAODv3-12502_1_cfg.py
 echo "========================="
 echo "==> List all files..."
 echo "pwd : ${PWD}"
@@ -68,13 +78,13 @@ echo "+=============================="
 
 # copy output to eos
 echo "xrdcp output for condor"
-cp MINIAODSIM.root out_MiniAOD_${1}_${2}.root
+mv EXO-RunIISummer16MiniAODv3-12502.root  EXO-RunIISummer16MiniAODv3_${1}_${2}.root
 echo "========================="
 echo "==> List all files..."
 ls *.root 
 echo "+=============================="
 echo "xrdcp output for condor"
-xrdcp -f out_MiniAOD_${1}_${2}.root ${OUTDIR}/out_MiniAOD_${1}_${2}.root
+xrdcp -f EXO-RunIISummer16MiniAODv3_${1}_${2}.root ${OUTDIR}/EXO-RunIISummer16MiniAODv3_${1}_${2}.root
 echo "========================="
 echo "==> List all files..."
 ls *.root 
