@@ -1,12 +1,9 @@
 # H4L Info
 
-- Full sim scripts download from: [https://cms-pdmv.cern.ch/mcm/chained_requests?prepid=B2G-chain_RunIISummer20UL17wmLHEGEN_flowRunIISummer20UL17SIM_flowRunIISummer20UL17DIGIPremix_flowRunIISummer20UL17HLT_flowRunIISummer20UL17RECO_flowRunIISummer20UL17MiniAODv2-00068&page=0&shown=15](https://cms-pdmv.cern.ch/mcm/chained_requests?prepid=B2G-chain_RunIISummer20UL17wmLHEGEN_flowRunIISummer20UL17SIM_flowRunIISummer20UL17DIGIPremix_flowRunIISummer20UL17HLT_flowRunIISummer20UL17RECO_flowRunIISummer20UL17MiniAODv2-00068&page=0&shown=15)
-   - wmLHEGEN (CMSSW_10_6_18): https://cms-pdmv.cern.ch/mcm/public/restapi/requests/get_setup/B2G-RunIISummer20UL17wmLHEGEN-00005
-   - SIM (CMSSW_10_6_17_patch1): https://cms-pdmv.cern.ch/mcm/public/restapi/requests/get_setup/B2G-RunIISummer20UL17SIM-00001
-   - DIGIPremix (CMSSW_10_6_17_patch1): https://cms-pdmv.cern.ch/mcm/public/restapi/requests/get_setup/B2G-RunIISummer20UL17DIGIPremix-00001
-   - HLT (CMSSW_9_4_14_UL_patch1): https://cms-pdmv.cern.ch/mcm/public/restapi/requests/get_setup/B2G-RunIISummer20UL17HLT-00001
-   - RECO (CMSSW_10_6_17_patch1): https://cms-pdmv.cern.ch/mcm/public/restapi/requests/get_setup/B2G-RunIISummer20UL17RECO-00001
-   - MiniAOD (CMSSW_10_6_20): https://cms-pdmv.cern.ch/mcm/public/restapi/requests/get_setup/B2G-RunIISummer20UL17MiniAODv2-00068
+- Full sim scripts download from: [https://cms-pdmv.cern.ch/mcm/chained_requests?prepid=EXO-chain_RunIISummer15wmLHEGS_flowRunIISummer16DR80PremixPUMoriond17_flowRunIISummer16MiniAODv3_flowRunIISummer16NanoAODv7-03347](https://cms-pdmv.cern.ch/mcm/chained_requests?prepid=EXO-chain_RunIISummer15wmLHEGS_flowRunIISummer16DR80PremixPUMoriond17_flowRunIISummer16MiniAODv3_flowRunIISummer16NanoAODv7-03347)
+   - SIM (CMSSW_7_1_38): https://cms-pdmv.cern.ch/mcm/requests?prepid=EXO-RunIISummer15wmLHEGS-06994
+   - DIGIPremix (CMSSW_8_0_31): https://cms-pdmv.cern.ch/mcm/requests?prepid=EXO-RunIISummer16DR80Premix-14543
+   - MiniAOD (CMSSW_9_4_9): https://cms-pdmv.cern.ch/mcm/requests?prepid=EXO-RunIISummer16MiniAODv3-12495&page=0
 
 ## Inputs
 
@@ -22,7 +19,7 @@
 
 For the CMSSW full simulation, first choose the campaign which is closest to your analysis.
 
-1. Select one campaign. For example I choose: [https://cms-pdmv.cern.ch/mcm/requests?prepid=B2G-RunIIAutumn18NanoAODv6-01916&page=0&shown=127](https://cms-pdmv.cern.ch/mcm/requests?prepid=B2G-RunIIAutumn18NanoAODv6-01916&page=0&shown=127)
+1. Select one campaign. For example I choose: [https://cms-pdmv.cern.ch/mcm/chained_requests?prepid=EXO-chain_RunIISummer15wmLHEGS_flowRunIISummer16DR80PremixPUMoriond17_flowRunIISummer16MiniAODv3_flowRunIISummer16NanoAODv7-03347&page=0&shown=15](https://cms-pdmv.cern.ch/mcm/chained_requests?prepid=EXO-chain_RunIISummer15wmLHEGS_flowRunIISummer16DR80PremixPUMoriond17_flowRunIISummer16MiniAODv3_flowRunIISummer16NanoAODv7-03347&page=0&shown=15)
 
 2. Go to the chains and select each chain one by one and do the following for each of them.
 
@@ -49,7 +46,7 @@ For the CMSSW full simulation, first choose the campaign which is closest to you
    
    where, `testLHE-GEN.py` is the name of first configuration file.
    
-   **NOTE**: Also in the first *.py you need to see if the initial, final and intermediate states are not same then you might need to edit the pythia fragment part. Generally, this part [B2G-RunIIFall18wmLHEGS-01725_1_cfg.py#L98-L162](https://github.com/ram1123/CMS_FulllSimulation/blob/3fb13d4dffe1b3160b1616a4b2ac569f42b84207/B2G-RunIIFall18wmLHEGS-01725_1_cfg.py#L98-L162)
+   **NOTE**: Also in the first *.py you need to see if the initial, final and intermediate states are not same then you might need to edit the pythia fragment part. Generally, this part [EXO-RunIISummer15wmLHEGS-06994_1_cfg.py.py#L98-L162](https://github.com/tiwariPC/CMS_privateMC_Production/blob/privateMC_2016/EXO-RunIISummer15wmLHEGS-06994_1_cfg.py#L78-L116)
 
 4. Test each python configuration one after another in appropriate sequence to check if its fine. *There might be an issue of name of input root files. The script might not taking the input of previous step automatically because of naming difference. So you need to fix it.*
 
@@ -59,13 +56,13 @@ For the CMSSW full simulation, first choose the campaign which is closest to you
 # Condor Job Submission
 
 ```
-git clone git@github.com:tiwariPC/CMS_privateMC_Production.git
+git clone git@github.com:tiwariPC/CMS_privateMC_Production.git -b privateMC_2016
 cd CMS_privateMC_Production
 ```
 
 1. place all the python configuration file inside the directory `CMS_privateMC_Production`.
-2. Update the `privateMC.jdl` and `privateMC.sh` files.
-    1. In file `privateMC.sh` you need to replace the python configuration file name at appropriate places.
+2. Update the `privateMC16.jdl` and `privateMC16.sh` files.
+    1. In file `privateMC16.sh` you need to replace the python configuration file name at appropriate places.
     1. Add the appropriate number of events and jobs. For example:
         1. If you want 50k events then you can change `Queue 50` in the jdl file and put 1000 in each python configuration files.
 3. To create ```.sh``` and ```.jdl``` file for the condor submission
