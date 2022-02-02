@@ -30,6 +30,7 @@ class condorJobHelper(object):
         outJdl.write('\n'+'Transfer_Input_Files = '+self.fileName+'.sh, ' + self.listOfFilesToTransfer)
         outJdl.write('\n'+'Transfer_Output_Files = dummyFile')
         outJdl.write('\n'+'use_x509userproxy = True')
+        outJdl.write('\n'+'+SingularityImage = "/cvmfs/singularity.opensciencegrid.org/cmssw/cms:rhel6"') ##for uscms
         if self.request_memory != 0: outJdl.write('\n'+'request_memory = '+str(self.request_memory))
         if self.request_cpus != 0: outJdl.write('\n'+'request_cpus = '+ str(self.request_cpus))
         return self.fileName+'.jdl'
