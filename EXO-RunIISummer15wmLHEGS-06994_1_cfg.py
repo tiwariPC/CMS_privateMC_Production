@@ -159,3 +159,6 @@ process = customisePostLS1(process)
 
 # Customisation from command line
 process.RandomNumberGeneratorService.externalLHEProducer.initialSeed=int(36)
+from IOMC.RandomEngine.RandomServiceHelper import RandomNumberServiceHelper
+randSvc = RandomNumberServiceHelper(process.RandomNumberGeneratorService)
+randSvc.populate()
