@@ -37,7 +37,7 @@ for key in sampleLists.models:
 
 
 import condorJobHelper
-listOfFilesToTransfer = 'EXO-RunIIFall17wmLHEGS-02213_1_cfg.py, EXO-RunIIFall17DRPremix-05692_1_cfg.py, EXO-RunIIFall17DRPremix-05692_2_cfg.py, EXO-RunIIFall17MiniAODv2-05632_1_cfg.py, dummyFile'
+listOfFilesToTransfer = 'EXO-RunIIFall18wmLHEGS-02404_1_cfg.py, EXO-RunIIAutumn18DRPremix-04524_1_cfg.py, EXO-RunIIAutumn18DRPremix-04524_2_cfg.py, EXO-RunIIAutumn18MiniAOD-04533_1_cfg.py, dummyFile'
 condorJobHelper = condorJobHelper.condorJobHelper(condor_file_name,
                                                   listOfFilesToTransfer,
                                                   12000,    # request_memory 12000
@@ -57,7 +57,7 @@ for key in sampleLists.models:
         DirName = gridpcaks.split('/')[-1].split('_')
         DirName = DirName[0]+'_'+DirName[1]+'_'+DirName[2]+'_'+DirName[3]+'_'+DirName[4]+'_'+DirName[5]
         condorJobHelper.logFileName = DirName
-        condorJobHelper.Arguments = 'EXO-RunIIFall17wmLHEGS-02213_1_cfg.py '+DirName + \
+        condorJobHelper.Arguments = 'EXO-RunIIFall18wmLHEGS-02404_1_cfg.py '+DirName + \
             os.sep+dirTag + '  '+gridpcaks.replace('/', '\/')
         jdlFile = condorJobHelper.jdlFileAppendLogInfo()
 
@@ -95,11 +95,11 @@ outScript.write('\n'+'echo "==> List all files..."')
 outScript.write('\n'+'ls ')
 outScript.write('\n'+'echo "+=============================="')
 outScript.write('\n'+'echo "==> Running GEN-SIM step (1001 events will be generated)"')
-outScript.write("\n"+'sed -i "s/args = cms.vstring.*/args = cms.vstring(\\"${5}\\"),/g" EXO-RunIIFall17wmLHEGS-02213_1_cfg.py ')
+outScript.write("\n"+'sed -i "s/args = cms.vstring.*/args = cms.vstring(\\"${5}\\"),/g" EXO-RunIIFall18wmLHEGS-02404_1_cfg.py ')
 outScript.write('\n'+'echo "+=============================="')
-outScript.write('\n'+'cat EXO-RunIIFall17wmLHEGS-02213_1_cfg.py ')
+outScript.write('\n'+'cat EXO-RunIIFall18wmLHEGS-02404_1_cfg.py ')
 outScript.write('\n'+'echo "+=============================="')
-outScript.write('\n'+'cmsRun EXO-RunIIFall17wmLHEGS-02213_1_cfg.py ')
+outScript.write('\n'+'cmsRun EXO-RunIIFall18wmLHEGS-02404_1_cfg.py ')
 # outScript.write('\n'+'cmsRun ${3} ')
 outScript.write('\n'+'echo "List all root files = "')
 outScript.write('\n'+'ls *.root')
@@ -119,17 +119,17 @@ outScript.write('\n'+'echo "==> List all files..."')
 outScript.write('\n'+'echo "pwd : ${PWD}"')
 outScript.write('\n'+'ls ')
 outScript.write('\n'+'echo "+=============================="')
-outScript.write('\n'+'echo "==> cmsRun EXO-RunIIFall17DRPremix-05692_1_cfg.py" ')
-outScript.write('\n'+'cmsRun EXO-RunIIFall17DRPremix-05692_1_cfg.py  ')
-outScript.write('\n'+'echo "==> cmsRun EXO-RunIIFall17DRPremix-05692_2_cfg.py"')
-outScript.write('\n'+'cmsRun EXO-RunIIFall17DRPremix-05692_2_cfg.py ')
+outScript.write('\n'+'echo "==> cmsRun EXO-RunIIAutumn18DRPremix-04524_1_cfg.py" ')
+outScript.write('\n'+'cmsRun EXO-RunIIAutumn18DRPremix-04524_1_cfg.py  ')
+outScript.write('\n'+'echo "==> cmsRun EXO-RunIIAutumn18DRPremix-04524_2_cfg.py"')
+outScript.write('\n'+'cmsRun EXO-RunIIAutumn18DRPremix-04524_2_cfg.py ')
 # outScript.write('\n'+'eval `scramv1 project CMSSW CMSSW_9_4_9`')
 # outScript.write('\n'+'cd CMSSW_9_4_9/src/')
 # outScript.write('\n'+'# set cmssw environment')
 # outScript.write('\n'+'eval `scram runtime -sh`')
 # outScript.write('\n'+'cd -')
-outScript.write('\n'+'echo "==> cmsRun EXO-RunIIFall17MiniAODv2-05632_1_cfg.py"')
-outScript.write('\n'+'cmsRun EXO-RunIIFall17MiniAODv2-05632_1_cfg.py')
+outScript.write('\n'+'echo "==> cmsRun EXO-RunIIAutumn18MiniAOD-04533_1_cfg.py"')
+outScript.write('\n'+'cmsRun EXO-RunIIAutumn18MiniAOD-04533_1_cfg.py')
 outScript.write('\n'+'echo "========================="')
 outScript.write('\n'+'echo "==> List all files..."')
 outScript.write('\n'+'echo "pwd : ${PWD}"')
@@ -143,7 +143,7 @@ outScript.write('\n'+'echo "+=============================="')
 outScript.write('\n'+'')
 outScript.write('\n'+'# copy output to eos')
 outScript.write('\n'+'echo "xrdcp output for condor"')
-outScript.write('\n'+'mv EXO-RunIIFall17MiniAODv2-05632.root  EXO-RunIIFall17MiniAODv2_${1}_${2}.root')
+outScript.write('\n'+'mv EXO-RunIIAutumn18MiniAOD-04533.root  EXO-RunIIFall17MiniAODv2_${1}_${2}.root')
 outScript.write('\n'+'echo "========================="')
 outScript.write('\n'+'echo "==> List all files..."')
 outScript.write('\n'+'ls *.root ')
