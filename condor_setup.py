@@ -10,7 +10,8 @@ from color_style import style
 """Fields changed by user"""
 StringToChange = 'privateMC'
 condor_file_name = StringToChange
-storeAreaPath = '/dpm/indiacms.res.in/home/cms/store/user/ptiwari/t3store2/2017_BBDM_2HDMa'
+# storeAreaPath = '/dpm/indiacms.res.in/home/cms/store/user/ptiwari/t3store2/2018_BBDM_2HDMa'
+storeAreaPath = '/eos/cms/store/group/phys_exotica/bbMET/2018_BBDM_2HDMa'
 storeAreaPathForlogs = '.'
 
 """Create log files"""
@@ -78,15 +79,17 @@ outScript.write('\n'+'echo "Input Arguments: $4"')
 outScript.write('\n'+'echo "Input Arguments: $5"')
 outScript.write('\n'+'echo "'+'#'*51+'"')
 outScript.write('\n'+'')
-outScript.write('\n'+'OUTDIR=root://se01.indiacms.res.in/'+storeAreaPath+os.sep+StringToChange+'/${4}/')
+# outScript.write('\n'+'OUTDIR=root://se01.indiacms.res.in/'+storeAreaPath+os.sep+StringToChange+'/${4}/')
+outScript.write('\n'+'OUTDIR=root://eoscms.cern.ch/'+storeAreaPath+os.sep+StringToChange+'/${4}/')
 outScript.write('\n'+'')
 outScript.write('\n'+'echo "======="')
 outScript.write('\n'+'ls')
 outScript.write('\n'+'echo "======"')
 outScript.write('\n'+'')
+outScript.write('\n'+'export SCRAM_ARCH=slc6_amd64_gcc700')
 outScript.write('\n'+'echo $PWD')
-outScript.write('\n'+'eval `scramv1 project CMSSW CMSSW_9_3_14`')
-outScript.write('\n'+'cd CMSSW_9_3_14/src/')
+outScript.write('\n'+'eval `scramv1 project CMSSW CMSSW_10_2_16_patch2`')
+outScript.write('\n'+'cd CMSSW_10_2_16_patch2/src/')
 outScript.write('\n'+'# set cmssw environment')
 outScript.write('\n'+'eval `scram runtime -sh`')
 outScript.write('\n'+'cd -')
@@ -108,8 +111,8 @@ outScript.write('\n'+'date')
 outScript.write('\n'+'echo "+=============================="')
 outScript.write('\n'+'')
 outScript.write('\n'+'echo "Loading CMSSW env DR1, DR2 and MiniAOD"')
-outScript.write('\n'+'eval `scramv1 project CMSSW CMSSW_9_4_7`')
-outScript.write('\n'+'cd CMSSW_9_4_7/src/')
+outScript.write('\n'+'eval `scramv1 project CMSSW CMSSW_10_2_5`')
+outScript.write('\n'+'cd CMSSW_10_2_5/src/')
 outScript.write('\n'+'# set cmssw environment')
 outScript.write('\n'+'eval `scram runtime -sh`')
 outScript.write('\n'+'cd -')

@@ -1,7 +1,7 @@
 # Auto generated configuration file
-# using: 
-# Revision: 1.19 
-# Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
+# using:
+# Revision: 1.19
+# Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v
 # with command line options: --python_filename EXO-RunIIAutumn18MiniAOD-04533_1_cfg.py --eventcontent MINIAODSIM --customise Configuration/DataProcessing/Utils.addMonitoring --datatier MINIAODSIM --fileout file:EXO-RunIIAutumn18MiniAOD-04533.root --conditions 102X_upgrade2018_realistic_v15 --step PAT --geometry DB:Extended --filein file:EXO-RunIIAutumn18DRPremix-04524.root --era Run2_2018 --runUnscheduled --no_exec --mc -n 3761
 import FWCore.ParameterSet.Config as cms
 
@@ -23,7 +23,7 @@ process.load('Configuration.StandardSequences.EndOfProcess_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(3761)
+    input = cms.untracked.int32(-1)
 )
 
 # Input source
@@ -61,47 +61,47 @@ process.MINIAODSIMoutput = cms.OutputModule("PoolOutputModule",
         cms.untracked.PSet(
             branch = cms.untracked.string('patPackedCandidates_packedPFCandidates__*'),
             splitLevel = cms.untracked.int32(99)
-        ), 
+        ),
         cms.untracked.PSet(
             branch = cms.untracked.string('recoGenParticles_prunedGenParticles__*'),
             splitLevel = cms.untracked.int32(99)
-        ), 
+        ),
         cms.untracked.PSet(
             branch = cms.untracked.string('patTriggerObjectStandAlones_slimmedPatTrigger__*'),
             splitLevel = cms.untracked.int32(99)
-        ), 
+        ),
         cms.untracked.PSet(
             branch = cms.untracked.string('patPackedGenParticles_packedGenParticles__*'),
             splitLevel = cms.untracked.int32(99)
-        ), 
+        ),
         cms.untracked.PSet(
             branch = cms.untracked.string('patJets_slimmedJets__*'),
             splitLevel = cms.untracked.int32(99)
-        ), 
+        ),
         cms.untracked.PSet(
             branch = cms.untracked.string('recoVertexs_offlineSlimmedPrimaryVertices__*'),
             splitLevel = cms.untracked.int32(99)
-        ), 
+        ),
         cms.untracked.PSet(
             branch = cms.untracked.string('recoCaloClusters_reducedEgamma_reducedESClusters_*'),
             splitLevel = cms.untracked.int32(99)
-        ), 
+        ),
         cms.untracked.PSet(
             branch = cms.untracked.string('EcalRecHitsSorted_reducedEgamma_reducedEBRecHits_*'),
             splitLevel = cms.untracked.int32(99)
-        ), 
+        ),
         cms.untracked.PSet(
             branch = cms.untracked.string('EcalRecHitsSorted_reducedEgamma_reducedEERecHits_*'),
             splitLevel = cms.untracked.int32(99)
-        ), 
+        ),
         cms.untracked.PSet(
             branch = cms.untracked.string('recoGenJets_slimmedGenJets__*'),
             splitLevel = cms.untracked.int32(99)
-        ), 
+        ),
         cms.untracked.PSet(
             branch = cms.untracked.string('patJets_slimmedJetsPuppi__*'),
             splitLevel = cms.untracked.int32(99)
-        ), 
+        ),
         cms.untracked.PSet(
             branch = cms.untracked.string('EcalRecHitsSorted_reducedEgamma_reducedESRecHits_*'),
             splitLevel = cms.untracked.int32(99)
@@ -157,7 +157,7 @@ associatePatAlgosToolsTask(process)
 # customisation of the process.
 
 # Automatic addition of the customisation function from Configuration.DataProcessing.Utils
-from Configuration.DataProcessing.Utils import addMonitoring 
+from Configuration.DataProcessing.Utils import addMonitoring
 
 #call to customisation function addMonitoring imported from Configuration.DataProcessing.Utils
 process = addMonitoring(process)
@@ -170,7 +170,7 @@ process=convertToUnscheduled(process)
 # customisation of the process.
 
 # Automatic addition of the customisation function from PhysicsTools.PatAlgos.slimming.miniAOD_tools
-from PhysicsTools.PatAlgos.slimming.miniAOD_tools import miniAOD_customizeAllMC 
+from PhysicsTools.PatAlgos.slimming.miniAOD_tools import miniAOD_customizeAllMC
 
 #call to customisation function miniAOD_customizeAllMC imported from PhysicsTools.PatAlgos.slimming.miniAOD_tools
 process = miniAOD_customizeAllMC(process)
