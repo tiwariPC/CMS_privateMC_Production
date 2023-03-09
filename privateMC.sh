@@ -13,15 +13,16 @@ echo "Input Arguments: $4"
 echo "Input Arguments: $5"
 echo "###################################################"
 
-OUTDIR=root://se01.indiacms.res.in//dpm/indiacms.res.in/home/cms/store/user/ptiwari/t3store2/2017_BBDM_2HDMa/privateMC/${4}/
+OUTDIR=root://eoscms.cern.ch//eos/cms/store/group/phys_exotica/bbMET/llp_slimmer2017/signalsample/privateMC/${4}/
 
 echo "======="
 ls
-echo "======"
+echo "======="
 
+export SCRAM_ARCH=slc7_amd64_gcc700
 echo $PWD
-eval `scramv1 project CMSSW CMSSW_9_3_14`
-cd CMSSW_9_3_14/src/
+eval `scramv1 project CMSSW CMSSW_10_2_21`
+cd CMSSW_10_2_21/src/
 # set cmssw environment
 eval `scram runtime -sh`
 cd -
@@ -29,36 +30,65 @@ echo "========================="
 echo "==> List all files..."
 ls 
 echo "+=============================="
-echo "==> Running GEN-SIM step (1001 events will be generated)"
-sed -i "s/args = cms.vstring.*/args = cms.vstring(\"${5}\"),/g" EXO-RunIIFall17wmLHEGS-02213_1_cfg.py 
+echo "==> Running GEN step"
+sed -i "s/args = cms.vstring.*/args = cms.vstring(\"${5}\"),/g" EXO-LLP_GEN_cfg.py 
 echo "+=============================="
-cat EXO-RunIIFall17wmLHEGS-02213_1_cfg.py 
+echo "==> EXO-LLP_GEN_cfg.py"
+cmsRun EXO-LLP_GEN_cfg.py 
 echo "+=============================="
-cmsRun EXO-RunIIFall17wmLHEGS-02213_1_cfg.py 
 echo "List all root files = "
+echo "pwd : ${PWD}"
 ls *.root
-echo "List all files"
-date
 echo "+=============================="
 
-echo "Loading CMSSW env DR1, DR2 and MiniAOD"
-eval `scramv1 project CMSSW CMSSW_9_4_7`
-cd CMSSW_9_4_7/src/
+echo "Loading CMSSW env for SIM step"
+eval `scramv1 project CMSSW CMSSW_10_6_25`
+cd CMSSW_10_6_25/src/
 # set cmssw environment
 eval `scram runtime -sh`
 cd -
-
-echo "========================="
-echo "==> List all files..."
-echo "pwd : ${PWD}"
-ls 
 echo "+=============================="
-echo "==> cmsRun EXO-RunIIFall17DRPremix-05692_1_cfg.py" 
-cmsRun EXO-RunIIFall17DRPremix-05692_1_cfg.py  
-echo "==> cmsRun EXO-RunIIFall17DRPremix-05692_2_cfg.py"
-cmsRun EXO-RunIIFall17DRPremix-05692_2_cfg.py 
-echo "==> cmsRun EXO-RunIIFall17MiniAODv2-05632_1_cfg.py"
-cmsRun EXO-RunIIFall17MiniAODv2-05632_1_cfg.py
+echo "cmsRun EXO-LLP_GEN-SIM_cfg.py"
+echo "+=============================="
+cmsRun EXO-LLP_GEN-SIM_cfg.py 
+echo "List all root files = "
+echo "pwd : ${PWD}"
+ls *.root
+echo "+=============================="
+
+echo "==> EXO-LLP_DIGIPremix_cfg.py" 
+cmsRun EXO-LLP_DIGIPremix_cfg.py  
+echo "+=============================="
+echo "List all root files = "
+echo "pwd : ${PWD}"
+ls *.root
+echo "+=============================="
+
+echo "Loading CMSSW env for HLT step"
+eval `scramv1 project CMSSW CMSSW_9_4_14_UL_patch1`
+cd CMSSW_9_4_14_UL_patch1/src/
+# set cmssw environment
+eval `scram runtime -sh`
+cd -
+echo "==> cmsRun EXO-LLP_HLT_cfg.py"
+cmsRun EXO-LLP_HLT_cfg.py 
+echo "+=============================="
+echo "List all root files = "
+echo "pwd : ${PWD}"
+ls *.root
+echo "+=============================="
+
+export SCRAM_ARCH=slc7_amd64_gcc700
+echo "Loading CMSSW env for RECO step"
+eval `scramv1 project CMSSW CMSSW_10_6_25`
+cd CMSSW_10_6_25/src/
+# set cmssw environment
+eval `scram runtime -sh`
+cd -
+echo "==> cmsRun EXO-LLP_RECO_cfg.py"
+cmsRun EXO-LLP_RECO_cfg.py
+echo "==> cmsRun EXO-LLP_MiniAOD_cfg.py"
+cmsRun EXO-LLP_MiniAOD_cfg.py
 echo "========================="
 echo "==> List all files..."
 echo "pwd : ${PWD}"
@@ -72,13 +102,13 @@ echo "+=============================="
 
 # copy output to eos
 echo "xrdcp output for condor"
-mv EXO-RunIIFall17MiniAODv2-05632.root  EXO-RunIIFall17MiniAODv2_${1}_${2}.root
+mv EXO-LLP_MiniAOD.root  EXO-LLP_RunIIFall17MiniAODv2_${1}_${2}.root
 echo "========================="
 echo "==> List all files..."
 ls *.root 
 echo "+=============================="
 echo "xrdcp output for condor"
-xrdcp -f EXO-RunIIFall17MiniAODv2_${1}_${2}.root ${OUTDIR}/EXO-RunIIFall17MiniAODv2_${1}_${2}.root
+xrdcp -f EXO-LLP_RunIIFall17MiniAODv2_${1}_${2}.root ${OUTDIR}/EXO-LLP_RunIIFall17MiniAODv2_${1}_${2}.root
 echo "========================="
 echo "==> List all files..."
 ls *.root 

@@ -36,9 +36,9 @@ For the CMSSW full simulation, first choose the campaign which is closest to you
 3. Now run each script one by one. First script will give you one *.py file 2nd one should give you two *.py files and third and fourth one should give you one *.py files each.
 
 3. Now append the random number generator at the end of first *.py file. So, that each time when you generate the GEN-SIM file from the gridpack it will generate independent set of events else it will just generate the same copies each time.
-   
+
    patch to add random number generator:
-   
+
    ```bash
    cat << EOF >> testLHE-GEN.py
    from IOMC.RandomEngine.RandomServiceHelper import RandomNumberServiceHelper
@@ -46,9 +46,9 @@ For the CMSSW full simulation, first choose the campaign which is closest to you
    randSvc.populate()
    EOF
    ```
-   
+
    where, `testLHE-GEN.py` is the name of first configuration file.
-   
+
    **NOTE**: Also in the first *.py you need to see if the initial, final and intermediate states are not same then you might need to edit the pythia fragment part. Generally, this part [B2G-RunIIFall18wmLHEGS-01725_1_cfg.py#L98-L162](https://github.com/ram1123/CMS_FulllSimulation/blob/3fb13d4dffe1b3160b1616a4b2ac569f42b84207/B2G-RunIIFall18wmLHEGS-01725_1_cfg.py#L98-L162)
 
 4. Test each python configuration one after another in appropriate sequence to check if its fine. *There might be an issue of name of input root files. The script might not taking the input of previous step automatically because of naming difference. So you need to fix it.*
@@ -75,5 +75,5 @@ cd CMS_privateMC_Production
 
 ```bash
 voms-proxy-init --voms cms --valid 168:00
-condor_submit RunGENSIM_condor.jdl
+condor_submit privateMC.jdl
 ```
